@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Project</title>
+    <link rel="stylesheet" href="Cinema.css">
+    <link rel="shortcut icon" href="cinema.iamges.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        header {
+            background-color: #2352c5;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .log-btn,
+        .register-btn {
+            border: 2px solid transparent;
+            border-radius: 9px;
+            margin-left: 10px;
+            font-size: 16px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+
+        .log-btn {
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            margin-left: 10px;
+            transition: 0.5s;
+        }
+
+        .log-btn:hover {
+            letter-spacing: 2px;
+
+        }
+
+        .register-btn {
+            border: 2px solid #fff;
+            color: #fff;
+            margin-left: 10px;
+            transition: 0.5s;
+        }
+
+        .register-btn:hover {
+            letter-spacing: 2px;
+        }
+
+        nav {
+            background-color: #2352c5;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+
+        nav li a {
+            transition: 0.5s;
+        }
+
+        nav li a:hover {
+            letter-spacing: 4px;
+
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .main-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .movie {
+            width: 300px;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+            border-radius: 10px;
+            border: 2px solid gray;
+            padding: 5px;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .movie:hover {
+            transform: scale(1.1);
+
+        }
+
+        .movie img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .movie-details {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .movie-description {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .movie-footer {
+            background-color: #eee;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .Add-btn,
+        .show-btn {
+            border: 2px solid transparent;
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .Add-btn {
+            background-color: #09e609;
+            color: white;
+            transition: 0.5s;
+        }
+
+        .Add-btn:hover {
+            background-color: transparent;
+            color: #09e609;
+            border-color: #09e609;
+        }
+
+        .show-btn {
+            background-color: #2352c5;
+            color: white;
+        }
+
+        .show-btn:hover {
+            background-color: transparent;
+            color: #2352c5;
+            border-color: #2352c5;
+        }
+
+        footer {
+            background-color: #b3b3b3;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer P {
+            font-size: 20px;
+        }
+
+        .social-icons li {
+            display: inline;
+            margin: 0 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .social-icons .fb {
+            color: blue;
+        }
+
+        .social-icons .ms {
+            color: blueviolet;
+        }
+
+        .social-icons .whatsapp {
+            color: green;
+        }
+
+        .social-icons .yt {
+            color: red;
+        }
+
+        .movie .div-header {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .div-words i {
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span class="log-btn">🚪 Log In</span>
+        <span class="register-btn">Register</span>
+        <h1 class="I-header">Cinema By Hanafy</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">call us 📞</a></li>
+            <li><a href="#">tickets 🎫</a></li>
+            <li><a href="#">times of work 🏢</a></li>
+            <li><a href="#">Movies 🎥</a></li>
+            <li><a href="#">Home Page</a></li>
+        </ul>
+    </nav>
+    <div class="main-container">
+        <!-- Your movie cards go here -->
+        <div class="movie">
+            <div class="div-header">
+                <b>Iron Man</b>
+            </div>
+            <img class="img-movie" src="ironman.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Iron Man<br> Movie Description</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : Action</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $40.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>End Game</b>
+            </div>
+            <img class="img-movie" src="EndGame.jpeg" alt="EndGame-movie">
+            <div class="div-words">
+                <i class="div-description">This Is End Game<br> Movie Description</i>
+                <p>Cinema : Cinema 4</p>
+                <p>Category : Action</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $29.50)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Hunter X Hunter </b>
+            </div>
+            <img class="img-movie" src="Anime Of Images.jpg" alt="anime1-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Hunter<br>Description</i>
+                <p>Cinema : Cinema 6</p>
+                <p>Category : Anime</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $15.70)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Star Woman</b>
+            </div>
+            <img class="img-movie" src="Marvel1.jpg" alt="Star-Woman-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Star <br> Woman Movie</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : Action</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $10.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Garden Away</b>
+            </div>
+            <img class="img-movie" src="garden.png" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Garden<br> Away Description</i>
+                <p>Cinema : Cinema 9</p>
+                <p>Category : Anime</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $40.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Dou</b>
+            </div>
+            <img class="img-movie" src="dou.png" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Doe<br> Movie Description</i>
+                <p>Cinema : Cinema 2</p>
+                <p>Category : Anime</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $100.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>jujutse kaisen</b>
+            </div>
+            <img class="img-movie" src="jujutse kaisen.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is jujutse<br>kaisen Movie</i>
+                <p>Cinema : Cinema 7</p>
+                <p>Category : Anime</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $79.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Goku</b>
+            </div>
+            <img class="img-movie" src="guku.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Goku<br> Movie Description</i>
+                <p>Cinema : Cinema 10</p>
+                <p>Category : Anime</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $400.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>sipirted Away</b>
+            </div>
+            <img class="img-movie" src="sipirted away.png" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Sipirted<br>Away Movie</i>
+                <p>Cinema : Cinema 15</p>
+                <p>Category : Anime</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $19.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Dragon Ball</b>
+            </div>
+            <img class="img-movie" src="Dragon Boll.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Dragon<br>Ball Description</i>
+                <p>Cinema : Cinema 17</p>
+                <p>Category : Anime</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $120.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Cora</b>
+            </div>
+            <img class="img-movie" src="Cora.png" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is cora<br> Movie Description</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : Animy</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $13.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Demon Slayer</b>
+            </div>
+            <img class="img-movie" src="Demon Slayer.webp" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Demon<br>Slayer Movie</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : Animy</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $90.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Ibrahim Labyad</b>
+            </div>
+            <img class="img-movie" src="Ibrahim Labyad.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Ibrahim<br>Labyad Movie</i>
+                <p>Cinema : Cinema 18</p>
+                <p>Category : Drama</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $240.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Habiba</b>
+            </div>
+            <img class="img-movie" src="Habiba.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Habiba<br> Movie Description</i>
+                <p>Cinema : Cinema 18</p>
+                <p>Category : horror</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $940.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Megan</b>
+            </div>
+            <img class="img-movie" src="Megan.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Megan<br> Movie Description</i>
+                <p>Cinema : Cinema 20</p>
+                <p>Category : horror</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $50.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>US</b>
+            </div>
+            <img class="img-movie" src="Us.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is US<br> Movie Description</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : horror</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $740.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Mihrez</b>
+            </div>
+            <img class="img-movie" src="Mihrez.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Mihrez<br> Movie Description</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : horror</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $40.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>13 Day</b>
+            </div>
+            <img class="img-movie" src="13day.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is 13 Day<br> Movie Description</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : Action</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $40.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Apsostle</b>
+            </div>
+            <img class="img-movie" src="Apsostle.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Apsostle<br> Movie Description</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : horror</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $640.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>BabyLon</b>
+            </div>
+            <img class="img-movie" src="BabyLon.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is BabyLon<br> Movie Description</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : Drama</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $40.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>A Man Called Otto</b>
+            </div>
+            <img class="img-movie" src="Otto.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Otto<br> Movie Description</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : Drama</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $40.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Aqua Man</b>
+            </div>
+            <img class="img-movie" src="aquaman.webp" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is aquaman<br> Movie Description</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : Action ,Drama</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $40.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Mission Raniganj</b>
+            </div>
+            <img class="img-movie" src="Mission Raniganj.jpg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Mission<br>Raniganj</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : Drama</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $40.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+        <div class="movie">
+            <div class="div-header">
+                <b>Jaana Jaan</b>
+            </div>
+            <img class="img-movie" src="Jaana jaan.jpeg" alt="Iron-man-movie">
+            <div class="div-words">
+                <i class="div-description">This Is Jaana jaan<br> Movie Description</i>
+                <p>Cinema : Cinema 1</p>
+                <p>Category : Drama</p>
+                <p>Start Date : 7 may 2008</p>
+                <p>End Date : 30 may 2011</p>
+                <p>Status : <h7 class="up">Upcoming</h7>
+                </p>
+            </div>
+            <div class="div-footer">
+                <input class="Add-btn" type="button" value="🛒 Add To Cart (Price $40.00)">
+                <input class="show-btn" type="button" value="👁 Show Details">
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <ul class="social-icons">
+            <li class="fb">Facebook</li>
+            <li class="ms">Messenger</li>
+            <li class="whatsapp">WhatsApp</li>
+            <li class="yt">YouTube</li>
+        </ul>
+        <p>Made By Mohamed Hanafy</p>
+        <p>01280811486</p>
+    </footer>
+</body>
+
+</html>
